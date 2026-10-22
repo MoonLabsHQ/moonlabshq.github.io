@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoonLabs — כלים לסטודנטים</title>
+<meta name="description" content="MoonLabs — כלים חכמים לסטודנטים: MoonScribe לתמלול הרצאות, MoonCRM לניהול מטופלים.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0F1117; --surface: #181B23; --line: #262B36;
+    --text: #ECECF1; --muted: #9AA0AC;
+    --scribe: #C98A98; --scribe-solid: #A4626F; --crm: #6FA8DC;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: 'Heebo', sans-serif; background: var(--bg); color: var(--text);
+    min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+    padding: 0 16px; line-height: 1.6;
+  }
+  header { text-align: center; padding: 72px 0 40px; }
+  .logo {
+    display: inline-flex; align-items: center; gap: 14px; margin-bottom: 18px;
+  }
+  .mark {
+    width: 54px; height: 54px; border-radius: 15px;
+    background: linear-gradient(135deg, var(--scribe-solid), var(--crm));
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 24px rgba(0,0,0,.4);
+  }
+  .brand { font-size: 34px; font-weight: 800; letter-spacing: .5px; }
+  .brand span { color: var(--muted); font-weight: 500; }
+  .tagline { color: var(--muted); font-size: 17px; max-width: 540px; margin: 0 auto; }
+
+  .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+           gap: 22px; width: 100%; max-width: 860px; margin: 10px 0 48px; }
+  @media (max-width: 680px) { .cards { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+    padding: 28px; display: flex; flex-direction: column; gap: 14px;
+  }
+  .card .top { display: flex; align-items: center; gap: 12px; }
+  .badge {
+    width: 44px; height: 44px; border-radius: 12px; display: flex;
+    align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .card h2 { margin: 0; font-size: 21px; font-weight: 700; }
+  .card .kind { color: var(--muted); font-size: 13px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; flex-grow: 1; }
+  .feat { list-style: none; padding: 0; margin: 2px 0; display: flex;
+          flex-direction: column; gap: 7px; font-size: 14px; color: var(--text); }
+  .feat li { display: flex; align-items: center; gap: 9px; }
+  .feat .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 11px;
+    padding: 13px 20px; transition: filter .15s ease; margin-top: 4px;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .btn.scribe { background: var(--scribe-solid); color: #fff; }
+  .btn.crm { background: var(--crm); color: #0F1117; }
+  .note { color: var(--muted); font-size: 12.5px; text-align: center; margin-top: 2px; }
+
+  footer { color: var(--muted); font-size: 13px; padding: 10px 0 48px; text-align: center; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="mark">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </div>
+      <div class="brand">Moon<span>Labs</span></div>
+    </div>
+    <p class="tagline">כלים חכמים לסטודנטים — פשוטים, מהירים, ושומרים על הפרטיות שלך.</p>
+  </header>
+
+  <main class="cards">
+
+    <section class="card">
+      <div class="top">
+        <div class="badge" style="background: rgba(164,98,111,.18);">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#C98A98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </div>
+        <div>
+          <h2>MoonScribe</h2>
+          <div class="kind">אפליקציה למחשב · Windows</div>
+        </div>
+      </div>
+      <p>הופכת הקלטת הרצאה למסמך Word מסודר — תמלול מהיר, שקפים משובצים במקום הנכון, סביבת צפייה עם נגן מסונכרן, וצ'אט עם ההרצאות.</p>
+      <ul class="feat">
+        <li><span class="dot" style="background:var(--scribe)"></span> תמלול עברית/אנגלית + זיהוי שקפים</li>
+        <li><span class="dot" style="background:var(--scribe)"></span> סיכום קורס שלם וצ'אט עם התוכן</li>
+        <li><span class="dot" style="background:var(--scribe)"></span> עובד גם מקומית, בלי אינטרנט</li>
+      </ul>
+      <a class="btn scribe" href="https://github.com/MoonLabsHQ/MoonScribe-releases/releases/latest/download/MoonScribe.zip">⬇ הורדה למחשב</a>
+      <div class="note">דורש מפתח הפעלה · גרסה 1.1.0</div>
+    </section>
+
+    <section class="card">
+      <div class="top">
+        <div class="badge" style="background: rgba(111,168,220,.18);">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6FA8DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <h2>MoonCRM</h2>
+          <div class="kind">אפליקציית ווב · כל מכשיר</div>
+        </div>
+      </div>
+      <p>ניהול מטופלים לסטודנטים לרפואת שיניים — תורים, מעקב, תזכורות וזימונים. הנתונים נשמרים בחשבון הגוגל שלך בלבד.</p>
+      <ul class="feat">
+        <li><span class="dot" style="background:var(--crm)"></span> גיליון ויומן בחשבון שלך</li>
+        <li><span class="dot" style="background:var(--crm)"></span> תזכורות וזימונים אוטומטיים</li>
+        <li><span class="dot" style="background:var(--crm)"></span> בלי התקנה — נפתח בדפדפן</li>
+      </ul>
+      <a class="btn crm" href="https://mooncrm.github.io">↗ פתיחת האפליקציה</a>
+      <div class="note">מבוסס Google · דורש חשבון גוגל</div>
+    </section>
+
+  </main>
+
+  <footer>© 2026 MoonLabs · <a href="https://github.com/MoonLabsHQ">GitHub</a></footer>
+</body>
+</html>
