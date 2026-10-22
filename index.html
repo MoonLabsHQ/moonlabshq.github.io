@@ -9,9 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0F1117; --surface: #181B23; --line: #262B36;
-    --text: #ECECF1; --muted: #9AA0AC;
-    --scribe: #C98A98; --scribe-solid: #A4626F; --crm: #6FA8DC;
+    --bg: #FBFAF9; --surface: #FFFFFF; --line: #E4DCDA;
+    --text: #22252B; --muted: #6B6B74;
+    --rose: #A4626F; --rose-dark: #8E5260; --rose-soft: #F3EDEC;
+    --crm: #4E7E96; --crm-soft: #EAF1F4;
   }
   * { box-sizing: border-box; }
   body {
@@ -20,32 +21,28 @@
     padding: 0 16px; line-height: 1.6;
   }
   header { text-align: center; padding: 72px 0 40px; }
-  .logo {
-    display: inline-flex; align-items: center; gap: 14px; margin-bottom: 18px;
-  }
+  .logo { display: inline-flex; align-items: center; gap: 14px; margin-bottom: 16px; }
   .mark {
-    width: 54px; height: 54px; border-radius: 15px;
-    background: linear-gradient(135deg, var(--scribe-solid), var(--crm));
+    width: 56px; height: 56px; border-radius: 16px; background: var(--rose);
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 6px 24px rgba(0,0,0,.4);
+    box-shadow: 0 6px 20px rgba(164,98,111,.3);
   }
-  .brand { font-size: 34px; font-weight: 800; letter-spacing: .5px; }
+  .brand { font-size: 36px; font-weight: 800; letter-spacing: .5px; color: var(--text); }
   .brand span { color: var(--muted); font-weight: 500; }
   .tagline { color: var(--muted); font-size: 17px; max-width: 540px; margin: 0 auto; }
 
   .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-           gap: 22px; width: 100%; max-width: 860px; margin: 10px 0 48px; }
+           gap: 22px; width: 100%; max-width: 860px; margin: 10px 0 44px; }
   @media (max-width: 680px) { .cards { grid-template-columns: 1fr; } }
 
   .card {
     background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
     padding: 28px; display: flex; flex-direction: column; gap: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.04);
   }
   .card .top { display: flex; align-items: center; gap: 12px; }
-  .badge {
-    width: 44px; height: 44px; border-radius: 12px; display: flex;
-    align-items: center; justify-content: center; flex-shrink: 0;
-  }
+  .badge { width: 44px; height: 44px; border-radius: 12px; display: flex;
+           align-items: center; justify-content: center; flex-shrink: 0; }
   .card h2 { margin: 0; font-size: 21px; font-weight: 700; }
   .card .kind { color: var(--muted); font-size: 13px; }
   .card p { margin: 0; color: var(--muted); font-size: 15px; flex-grow: 1; }
@@ -57,15 +54,16 @@
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 9px;
     text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 11px;
-    padding: 13px 20px; transition: filter .15s ease; margin-top: 4px;
+    padding: 13px 20px; transition: filter .15s ease, background .15s ease; margin-top: 4px;
   }
-  .btn:hover { filter: brightness(1.08); }
-  .btn.scribe { background: var(--scribe-solid); color: #fff; }
-  .btn.crm { background: var(--crm); color: #0F1117; }
+  .btn.rose { background: var(--rose); color: #fff; }
+  .btn.rose:hover { background: var(--rose-dark); }
+  .btn.crm { background: var(--crm); color: #fff; }
+  .btn.crm:hover { filter: brightness(.93); }
   .note { color: var(--muted); font-size: 12.5px; text-align: center; margin-top: 2px; }
 
   footer { color: var(--muted); font-size: 13px; padding: 10px 0 48px; text-align: center; }
-  footer a { color: var(--muted); }
+  footer a { color: var(--rose); }
 </style>
 </head>
 <body>
@@ -83,8 +81,8 @@
 
     <section class="card">
       <div class="top">
-        <div class="badge" style="background: rgba(164,98,111,.18);">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#C98A98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        <div class="badge" style="background: var(--rose-soft);">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#A4626F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
         </div>
         <div>
           <h2>MoonScribe</h2>
@@ -93,18 +91,18 @@
       </div>
       <p>הופכת הקלטת הרצאה למסמך Word מסודר — תמלול מהיר, שקפים משובצים במקום הנכון, סביבת צפייה עם נגן מסונכרן, וצ'אט עם ההרצאות.</p>
       <ul class="feat">
-        <li><span class="dot" style="background:var(--scribe)"></span> תמלול עברית/אנגלית + זיהוי שקפים</li>
-        <li><span class="dot" style="background:var(--scribe)"></span> סיכום קורס שלם וצ'אט עם התוכן</li>
-        <li><span class="dot" style="background:var(--scribe)"></span> עובד גם מקומית, בלי אינטרנט</li>
+        <li><span class="dot" style="background:var(--rose)"></span> תמלול עברית/אנגלית + זיהוי שקפים</li>
+        <li><span class="dot" style="background:var(--rose)"></span> סיכום קורס שלם וצ'אט עם התוכן</li>
+        <li><span class="dot" style="background:var(--rose)"></span> עובד גם מקומית, בלי אינטרנט</li>
       </ul>
-      <a class="btn scribe" href="https://github.com/MoonLabsHQ/MoonScribe-releases/releases/latest/download/MoonScribe.zip">⬇ הורדה למחשב</a>
-      <div class="note">דורש מפתח הפעלה · גרסה 1.1.0</div>
+      <a class="btn rose" href="https://github.com/MoonLabsHQ/MoonScribe-releases/releases/latest/download/MoonScribe.zip">⬇ הורדה למחשב</a>
+      <div class="note">דורש גישה מאושרת · גרסה 1.1.0</div>
     </section>
 
     <section class="card">
       <div class="top">
-        <div class="badge" style="background: rgba(111,168,220,.18);">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6FA8DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div class="badge" style="background: var(--crm-soft);">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#4E7E96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <div>
           <h2>MoonCRM</h2>
